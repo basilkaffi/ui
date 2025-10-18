@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Switch.module.scss';
 
 type SwitchProps = {
@@ -12,18 +12,8 @@ type SwitchProps = {
 	className?: string;
 };
 
-export default function Switch({
-	checked,
-	defaultChecked,
-	onChange,
-	disabled = false,
-	label,
-	id,
-	name,
-	className,
-}: SwitchProps) {
-	const autoId = useId();
-	const inputId = id ?? `switch-${autoId}`;
+function Switch(props: SwitchProps) {
+	const { checked, defaultChecked, onChange, disabled = false, label, id, name, className } = props;
 	const [internalChecked, setInternalChecked] = useState<boolean>(!!defaultChecked);
 
 	const isControlled = checked !== undefined;
@@ -37,12 +27,12 @@ export default function Switch({
 
 	return (
 		<label
-			htmlFor={inputId}
-			className={`${styles.switch} ${className ?? ''} ${disabled && 'disabled'}`.trim()}
+			htmlFor={id}
+			className={`${styles.switch} ${className ?? ''} ${disabled ? 'disabled' : ''}`.trim()}
 			aria-disabled={disabled}
 		>
 			<input
-				id={inputId}
+				id={id}
 				name={name}
 				type="checkbox"
 				role="switch"
@@ -63,3 +53,4 @@ export default function Switch({
 	);
 }
 
+export default Switch;

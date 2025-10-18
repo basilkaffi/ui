@@ -17,7 +17,7 @@ function InnerApp() {
 
   return (
     <div>
-      <Switch checked={isLight} onChange={toggleTheme} label={isLight ? 'Light' : 'Dark'} />
+      <Switch checked={isLight} onChange={toggleTheme} />
     </div>
   );
 }
