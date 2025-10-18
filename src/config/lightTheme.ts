@@ -21,10 +21,10 @@ const lightTheme: ThemeConfig = {
       contrast: 'purple-10',
     },
     secondary: {
-      default: 'blue-70',
-      hover: 'blue-80',
-      focus: 'blue-50',
-      contrast: 'blue-10',
+      default: 'gray-20',
+      hover: 'gray-30',
+      focus: 'gray-50',
+      contrast: 'gray-70',
     },
     success: {
       default: 'green-70',

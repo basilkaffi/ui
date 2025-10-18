@@ -21,10 +21,10 @@ export const darkTheme: ThemeConfig = {
       contrast: 'purple-10',
     },
     secondary: {
-      default: 'blue-60',
-      hover: 'blue-70',
-      focus: 'blue-40',
-      contrast: 'blue-10',
+      default: 'gray-80',
+      hover: 'gray-70',
+      focus: 'gray-60',
+      contrast: 'gray-20',
     },
     success: {
       default: 'green-60',
