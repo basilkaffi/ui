@@ -7,16 +7,29 @@ type ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+function themeToCSSVars(theme: Record<string, any>, prefix = ''): string {
+  let cssVars = '';
+
+  for (const key in theme) {
+    const value = theme[key];
+    const newPrefix = prefix ? `${prefix}-${key}` : key;
+
+    if (typeof value === 'string') {
+      cssVars += `--${newPrefix}: var(--${value});\n`;
+    } else {
+      cssVars += themeToCSSVars(value, newPrefix);
+    }
+  }
+
+  return cssVars;
+}
+
+
 export function applyTokens(tokenConfig: ThemeConfig) {
   const styleId = 'theme-provider-styles';
   let styleEl = document.getElementById(styleId) as HTMLStyleElement | null;
 
-  const cssVars = Object.entries(tokenConfig)
-    .map(([k, v]) => {
-      const key = k.replace(/([A-Z])/g, '-$1').toLowerCase();
-      return `--${key}: var(--${v});`
-    })
-    .join('\n  ');
+  const cssVars = themeToCSSVars(tokenConfig);
 
   const themeProviderClass = `.theme-provider {\n  ${cssVars}\n}`;
 
@@ -24,15 +37,16 @@ export function applyTokens(tokenConfig: ThemeConfig) {
     background: var(--background);
     color: var(--text-primary);
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    font-size: 16px;
-    transition: background 300ms ease, color 300ms ease;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    transition: background 300ms ease, color 300ms ease;
   }`;
 
   const disabledRule = `.theme-provider .disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    pointer-event: none;
   }`;
 
   const css = `\n${themeProviderClass} \n${baseStyles} \n${disabledRule}`;

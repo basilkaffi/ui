@@ -8,7 +8,11 @@
 
 .input {
 	position: absolute;
-  visibility: hidden;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	pointer-events: none;
 }
 
 .track {
@@ -33,17 +37,17 @@
 	transition: transform 0.18s ease-in-out;
 }
 
-/* When the checkbox is checked, move the thumb and change the track color */
 .input:checked + .track {
-	background: var(--button-primary);
+	background: var(--button-primary-default);
 }
-
-.input:checked + .thumb {
+.input:checked + .track .thumb {
+	transform: translateX(20px);
 	background: var(--background);
 }
 
-.input:checked + .track .thumb {
-	transform: translateX(20px);
+.input:focus-visible + .track {
+	outline: 2px solid var(--button-primary-focus);
+	outline-offset: 1px;
 }
 
 .label {

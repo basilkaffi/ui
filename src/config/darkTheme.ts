@@ -4,19 +4,53 @@ export const darkTheme: ThemeConfig = {
   background: 'gray-90',
   surface: 'gray-80',
   muted: 'gray-40',
-  textPrimary: 'gray-10',
-  textSecondary: 'gray-30',
-  textAccent: 'blue-50',
-  buttonPrimary: 'blue-60',
-  buttonSecondary: 'gray-30',
-  buttonPrimaryHover: 'blue-70',
-  buttonSecondaryHover: 'gray-40',
   link: 'blue-40',
-  linkHover: 'blue-60',
-  success: 'green-50',
-  warning: 'yellow-60',
-  info: 'cyan-30',
-  error: 'red-50',
+  text: {
+    primary: 'gray-10',
+    secondary: 'gray-30',
+    success: 'green-30',
+    warning: 'yellow-30',
+    info: 'cyan-30',
+    error: 'red-30',
+  },
+  button: {
+    primary: {
+      default: 'purple-60',
+      hover: 'purple-70',
+      focus: 'purple-40',
+      contrast: 'purple-10',
+    },
+    secondary: {
+      default: 'blue-60',
+      hover: 'blue-70',
+      focus: 'blue-40',
+      contrast: 'blue-10',
+    },
+    success: {
+      default: 'green-60',
+      hover: 'green-70',
+      focus: 'green-40',
+      contrast: 'green-10',
+    },
+    warning: {
+      default: 'yellow-60',
+      hover: 'yellow-70',
+      focus: 'yellow-40',
+      contrast: 'yellow-10',
+    },
+    info: {
+      default: 'cyan-60',
+      hover: 'cyan-70',
+      focus: 'cyan-40',
+      contrast: 'cyan-10',
+    },
+    error: {
+      default: 'red-60',
+      hover: 'red-70',
+      focus: 'red-40',
+      contrast: 'red-10',
+    },
+  }
 };
 
 export default darkTheme;
