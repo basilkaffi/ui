@@ -4,16 +4,21 @@ const lightTheme: ThemeConfig = {
   background: 'gray-10',
   surface: 'purple-10',
   muted: 'purple-40',
+  font: {
+    primary: '"Geist", sans-serif',
+    secondary: '"Sora", sans-serif',
+    source: 'https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Sora:wght@100..800&display=swap',
+  },
   link: {
     default: 'purple-70',
     hover: 'purple-90',
   },
   text: {
-    primary: 'gray-70',
+    primary: 'gray-80',
     secondary: 'gray-50',
-    success: 'green-70',
-    warning: 'yellow-70',
-    info: 'cyan-70',
+    success: 'green-60',
+    warning: 'yellow-60',
+    info: 'cyan-40',
     error: 'red-70',
   },
   button: {

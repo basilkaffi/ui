@@ -4,17 +4,22 @@ export const darkTheme: ThemeConfig = {
   background: 'gray-90',
   surface: 'gray-80',
   muted: 'gray-40',
+  font: {
+    primary: '"Geist", sans-serif',
+    secondary: '"Sora", sans-serif',
+    source: 'https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Sora:wght@100..800&display=swap',
+  },
   link: {
     default: 'purple-40',
     hover: 'purple-20',
   },
   text: {
     primary: 'gray-10',
-    secondary: 'gray-30',
-    success: 'green-30',
-    warning: 'yellow-30',
+    secondary: 'gray-40',
+    success: 'green-50',
+    warning: 'yellow-40',
     info: 'cyan-30',
-    error: 'red-30',
+    error: 'red-50',
   },
   button: {
     primary: {

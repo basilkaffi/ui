@@ -5,6 +5,7 @@ import darkTheme from './config/darkTheme';
 import Switch from './components/Switch/Switch';
 import { useState } from 'react';
 import Button from './components/Button/Button';
+import { Heading, Paragraph, Small, Link } from './components/Typography/Typography';
 
 function InnerApp() {
   const { applyTheme } = useTheme();
@@ -22,14 +23,47 @@ function InnerApp() {
       <hr />
       <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
         <Switch />
-        <Button variant='primary'>Primary</Button>
-        <Button variant='secondary'>Secondary</Button>
-        <Button variant='success'>Success</Button>
-        <Button variant='warning'>Warning</Button>
-        <Button variant='info'>Info</Button>
-        <Button variant='error'>Error</Button>
-        <a href="#">Link</a>
+        <Button color='primary'>Primary</Button>
+        <Button color='secondary'>Secondary</Button>
+        <Button color='success'>Success</Button>
+        <Button color='warning'>Warning</Button>
+        <Button color='info'>Info</Button>
+        <Button color='error'>Error</Button>
+        <Link href="#">link example</Link>
       </div>
+      <Heading variant='1'>Title Heading 1</Heading>
+      <Heading color='secondary' variant='1'>Title Heading 1</Heading>
+      <Heading variant='2'>Title Heading 2</Heading>
+      <Heading color='secondary' variant='2'>Title Heading 2</Heading>
+      <Heading variant='3'>Title Heading 3</Heading>
+      <Heading color='secondary' variant='3'>Title Heading 3</Heading>
+      <Heading variant='4'>Title Heading 4</Heading>
+      <Heading color='secondary' variant='4'>Title Heading 4</Heading>
+      <Heading variant='5'>Title Heading 5</Heading>
+      <Heading color='secondary' variant='5'>Title Heading 5</Heading>
+      <Heading variant='6'>Title Heading 6</Heading>
+      <Heading color='secondary' variant='6'>Title Heading 6</Heading>
+      <Paragraph>
+        This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
+      </Paragraph>
+      <Paragraph color='secondary'>
+        This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
+      </Paragraph>
+      <Paragraph color='success'>
+        This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
+      </Paragraph>
+      <Paragraph color='warning'>
+        This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
+      </Paragraph>
+      <Paragraph color='info'>
+        This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
+      </Paragraph>
+      <Paragraph color='error'>
+        This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
+      </Paragraph>
+      <Small>
+        This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
+      </Small>
     </div>
   );
 }

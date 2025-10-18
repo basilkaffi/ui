@@ -1,14 +1,16 @@
+import type { ComponentProps } from 'react';
+import type { Variant } from "../../theme/types";
 import styles from './Button.module.scss';
 
-type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
-  variant: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error';
+type ButtonProps = ComponentProps<'button'> & {
+  color?: Variant;
 }
 
 function Button (props: ButtonProps) {
-  const { variant = 'primary', className, disabled, ...otherProps } = props;
+  const { color = 'primary', className, disabled, ...otherProps } = props;
   const buttonClassName =() => {
-    const variantClassName = `button-${variant}`;
-    return `${styles.button} ${styles[variantClassName]} ${className ?? ''} ${disabled ? 'disabled' : ''}`.trim();
+    const colorClassName = `button-${color}`;
+    return `${styles.button} ${styles[colorClassName]} ${className ?? ''} ${disabled ? 'disabled' : ''}`.trim();
   };
   return (
     <button
