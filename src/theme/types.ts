@@ -1,5 +1,5 @@
 // Define design tokens
-const designTokens = [
+const tokens = [
 	'background',
 	'surface',
 	'muted',
@@ -22,7 +22,7 @@ const states = ['default', 'hover', 'focus', 'contrast'] as const;
 type Step = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10';
 
 type Color = `${string}-${Step}0`;
-type Token = (typeof designTokens)[number];
+type Token = (typeof tokens)[number];
 type Variant = (typeof variants)[number];
 type State = (typeof states)[number];
 
