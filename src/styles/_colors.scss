@@ -1,0 +1,39 @@
+// Generated OKLCH color scales for the project.
+// Uses SCSS to emit CSS custom properties like --gray-00 ... --gray-100
+
+$steps: 11; // 0,10,...,100
+
+// Helper to format numbers with leading zero for 0 (00) and two-digit steps
+@function pad-step($n){
+  @if $n == 0 { @return "00"; }
+  @return if($n < 10, "0#{$n}", "#{$n}");
+}
+
+// Build a generic palette generator.
+@mixin generate-palette($name, $h, $c-min, $c-max, $l-start, $l-end){
+  :root {
+    @for $i from 0 through $steps - 1 {
+      $pct: $i * 10;
+      $t: calc($pct / 100);
+      $l: $l-start + ($l-end - $l-start) * $t;
+      $c: $c-min + ($c-max - $c-min) * $t;
+      $id: pad-step($pct);
+      --#{$name}-#{$id}: oklch(#{$l}% #{$c} #{$h});
+    }
+  }
+}
+
+// Define core palettes
+@include generate-palette('gray', 250, 0.00, 0.02, 100, 12);
+@include generate-palette('blue', 220, 0.01, 0.14, 96, 20);
+@include generate-palette('red', 20, 0.02, 0.18, 98, 30);
+@include generate-palette('green', 140, 0.02, 0.16, 96, 22);
+@include generate-palette('yellow', 95, 0.01, 0.16, 98, 40);
+@include generate-palette('purple', 280, 0.01, 0.14, 96, 24);
+@include generate-palette('orange', 30, 0.01, 0.16, 98, 32);
+
+// Single-shot tokens
+:root {
+  --white-00: oklch(100% 0 0);
+  --black-100: oklch(2% 0 0);
+}
