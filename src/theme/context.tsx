@@ -1,21 +1,41 @@
 import { createContext, useContext } from 'react';
-import type { ThemeTokens } from './types';
+import type { ThemeConfig } from './types';
 
 type ThemeContextType = {
-  applyTheme: (customTheme: ThemeTokens) => void;
+  applyTheme: (customTheme: ThemeConfig) => void;
 };
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function applyTokens(tokens: ThemeTokens) {
+export function applyTokens(tokenConfig: ThemeConfig) {
   const styleId = 'theme-provider-styles';
   let styleEl = document.getElementById(styleId) as HTMLStyleElement | null;
 
-  const cssVars = Object.entries(tokens)
-    .map(([k, v]) => `${k}: ${v};`)
+  const cssVars = Object.entries(tokenConfig)
+    .map(([k, v]) => {
+      const key = k.replace(/([A-Z])/g, '-$1').toLowerCase();
+      return `--${key}: var(--${v});`
+    })
     .join('\n  ');
 
-  const css = `.theme-provider {\n  ${cssVars}\n}`;
+  const themeProviderClass = `.theme-provider {\n  ${cssVars}\n}`;
+
+  const baseStyles = `body {
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    font-size: 16px;
+    transition: background 300ms ease, color 300ms ease;
+    margin: 0;
+    box-sizing: border-box;
+  }`;
+
+  const disabledRule = `.theme-provider .disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }`;
+
+  const css = `\n${themeProviderClass} \n${baseStyles} \n${disabledRule}`;
 
   if (!styleEl) {
     styleEl = document.createElement('style');

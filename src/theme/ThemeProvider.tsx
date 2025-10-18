@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
-import type { ThemeTokens } from './types';
+import type { ThemeConfig } from './types';
 import { ThemeContext, applyTokens } from './context';
-import '../styles/index.scss';
+import '../styles/colors.scss';
 import darkTheme from '../config/darkTheme';
 
-export const ThemeProvider: React.FC<React.PropsWithChildren<{ themeConfig?: ThemeTokens }>> = ({ children, themeConfig = darkTheme }) => {
+export const ThemeProvider: React.FC<React.PropsWithChildren<{ themeConfig?: ThemeConfig }>> = ({ children, themeConfig = darkTheme }) => {
 
   useEffect(() => {
     applyTokens(themeConfig);
   }, [themeConfig]);
 
-  const applyTheme = (customTheme: ThemeTokens) => {
+  const applyTheme = (customTheme: ThemeConfig) => {
     applyTokens(customTheme);
   };
 
