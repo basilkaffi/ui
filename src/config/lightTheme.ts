@@ -2,12 +2,15 @@ import type { ThemeConfig } from '../theme/types';
 
 const lightTheme: ThemeConfig = {
   background: 'gray-10',
-  surface: 'blue-10',
-  muted: 'blue-40',
-  link: 'blue-60',
+  surface: 'purple-10',
+  muted: 'purple-40',
+  link: {
+    default: 'purple-70',
+    hover: 'purple-90',
+  },
   text: {
-    primary: 'gray-90',
-    secondary: 'gray-70',
+    primary: 'gray-70',
+    secondary: 'gray-50',
     success: 'green-70',
     warning: 'yellow-70',
     info: 'cyan-70',

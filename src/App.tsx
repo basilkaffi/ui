@@ -17,16 +17,19 @@ function InnerApp() {
   }
 
   return (
-    <div>
-      <Switch checked={isLight} onChange={toggleTheme} />
+    <div style={{ padding: '20px' }}>
+        <Switch checked={isLight} onChange={toggleTheme} label={`${isLight ? 'Light' : 'Dark'} Theme`} />
       <hr />
-      <Switch />
-      <Button variant='primary'>Primary</Button>
-      <Button variant='secondary'>Secondary</Button>
-      <Button variant='success'>Success</Button>
-      <Button variant='warning'>Warning</Button>
-      <Button variant='info'>Info</Button>
-      <Button variant='error'>Error</Button>
+      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+        <Switch />
+        <Button variant='primary'>Primary</Button>
+        <Button variant='secondary'>Secondary</Button>
+        <Button variant='success'>Success</Button>
+        <Button variant='warning'>Warning</Button>
+        <Button variant='info'>Info</Button>
+        <Button variant='error'>Error</Button>
+        <a href="#">Link</a>
+      </div>
     </div>
   );
 }

@@ -24,7 +24,6 @@ function themeToCSSVars(theme: Record<string, any>, prefix = ''): string {
   return cssVars;
 }
 
-
 export function applyTokens(tokenConfig: ThemeConfig) {
   const styleId = 'theme-provider-styles';
   let styleEl = document.getElementById(styleId) as HTMLStyleElement | null;
@@ -33,23 +32,7 @@ export function applyTokens(tokenConfig: ThemeConfig) {
 
   const themeProviderClass = `.theme-provider {\n  ${cssVars}\n}`;
 
-  const baseStyles = `body {
-    background: var(--background);
-    color: var(--text-primary);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: background 300ms ease, color 300ms ease;
-  }`;
-
-  const disabledRule = `.theme-provider .disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    pointer-event: none;
-  }`;
-
-  const css = `\n${themeProviderClass} \n${baseStyles} \n${disabledRule}`;
+  const css = `\n${themeProviderClass}`;
 
   if (!styleEl) {
     styleEl = document.createElement('style');

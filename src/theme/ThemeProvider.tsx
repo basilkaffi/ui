@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import type { ThemeConfig } from './types';
 import { ThemeContext, applyTokens } from './context';
-import '../styles/colors.scss';
+import '../styles/index.scss';
 import darkTheme from '../config/darkTheme';
 
 export const ThemeProvider: React.FC<React.PropsWithChildren<{ themeConfig?: ThemeConfig }>> = ({ children, themeConfig = darkTheme }) => {

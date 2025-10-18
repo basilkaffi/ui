@@ -25,7 +25,6 @@ $steps: 10;
 
 // Define core palettes
 @include generate-palette('gray', 250, 0.00, 0.02, 100, 12);
-@include generate-palette('blue', 220, 0.01, 0.14, 96, 20);
 @include generate-palette('red', 20, 0.02, 0.18, 98, 30);
 @include generate-palette('green', 140, 0.02, 0.16, 96, 22);
 @include generate-palette('yellow', 95, 0.01, 0.16, 98, 40);

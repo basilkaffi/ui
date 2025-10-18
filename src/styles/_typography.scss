@@ -1,0 +1,9 @@
+a {
+  color: var(--link-default);
+  text-decoration: none;
+  transition: color 200ms ease;
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}

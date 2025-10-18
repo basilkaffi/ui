@@ -4,7 +4,10 @@ export const darkTheme: ThemeConfig = {
   background: 'gray-90',
   surface: 'gray-80',
   muted: 'gray-40',
-  link: 'blue-40',
+  link: {
+    default: 'purple-40',
+    hover: 'purple-20',
+  },
   text: {
     primary: 'gray-10',
     secondary: 'gray-30',
