@@ -26,4 +26,7 @@ type Token = (typeof designTokens)[number];
 type Variant = (typeof variants)[number];
 type State = (typeof states)[number];
 
-export type ThemeConfig = Record<Token, Record<Variant, Record<State, Color> | Color> | Record<State, Color> | Color>;
+type StateColors = Partial<Record<State, Color>>;
+type VariantColors = Partial<Record<Variant, StateColors | Color>>;
+
+export type ThemeConfig = Record<Token, VariantColors | StateColors | Color>;
