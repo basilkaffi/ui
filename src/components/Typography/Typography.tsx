@@ -4,7 +4,7 @@ import styles from './Typography.module.scss';
 
 type HeadingProps = ComponentProps<'h1'> & {
   color?: 'primary' | 'secondary';
-  variant: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: '1' | '2' | '3' | '4' | '5' | '6';
 }
 
 type ParagraphProps = ComponentProps<'p'> & {
