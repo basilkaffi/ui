@@ -1,11 +1,7 @@
-import { ThemeProvider } from './theme/ThemeProvider';
-import { useTheme } from './theme/context';
-import lightTheme from './config/lightTheme';
-import darkTheme from './config/darkTheme';
-import Switch from './components/Switch/Switch';
 import { useState } from 'react';
-import Button from './components/Button/Button';
-import { Heading, Paragraph, Small, Link } from './components/Typography/Typography';
+import { ThemeProvider, useTheme } from '@theme';
+import { lightTheme, darkTheme } from '@config';
+import { Switch, Button, Heading, Paragraph, Small, Link } from '@components';
 
 function InnerApp() {
   const { applyTheme } = useTheme();

@@ -1,6 +1,6 @@
 import type { ThemeConfig } from '../theme/types';
 
-export const darkTheme: ThemeConfig = {
+const darkTheme: ThemeConfig = {
   background: 'gray-90',
   surface: 'gray-80',
   muted: 'gray-40',
