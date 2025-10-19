@@ -1,8 +1,8 @@
 import { useEffect, useContext, createContext } from 'react';
 import type { ThemeConfig } from './types';
 import { applyTokens } from './utils';
-import { darkTheme } from '@config';
-import '@styles/index.scss';
+import { darkTheme } from '../config';
+import '../styles/index.scss';
 
 type ThemeContextType = {
   applyTheme: (customTheme: ThemeConfig) => void;
