@@ -9,7 +9,7 @@
   border: none;
   border-radius: 0.2rem;
   min-width: 5rem;
-  
+
   font-size: 0.875rem;
   font-weight: 500;
 
@@ -17,86 +17,23 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.button-primary {
-  background-color: var(--button-primary-default);
-  color: var(--button-primary-contrast);
+@mixin button-variant($name) {
+  background-color: var(--button-#{$name}-default);
+  color: var(--button-#{$name}-contrast);
 
   &:hover:not(.disabled) {
-    background-color: var(--button-primary-hover);
+    background-color: var(--button-#{$name}-hover);
   }
 
   &:focus-visible {
     outline-offset: 1px;
-    outline: 2px solid var(--button-primary-focus);
+    outline: 2px solid var(--button-#{$name}-focus);
   }
 }
 
-.button-secondary {
-  background-color: var(--button-secondary-default);
-  color: var(--button-secondary-contrast);
-
-  &:hover:not(.disabled) {
-    background-color: var(--button-secondary-hover);
-  }
-
-  &:focus-visible {
-    outline-offset: 1px;
-    outline: 2px solid var(--button-secondary-focus);
-  }
-}
-
-.button-success {
-  background-color: var(--button-success-default);
-  color: var(--button-success-contrast);
-
-  &:hover:not(.disabled) {
-    background-color: var(--button-success-hover);
-  }
-
-  &:focus-visible {
-    outline-offset: 1px;
-    outline: 2px solid var(--button-success-focus);
-  }
-}
-
-.button-warning {
-  background-color: var(--button-warning-default);
-  color: var(--button-warning-contrast);
-
-  &:hover:not(.disabled) {
-    background-color: var(--button-warning-hover);
-  }
-
-  &:focus-visible {
-    outline-offset: 1px;
-    outline: 2px solid var(--button-warning-focus);
-  }
-}
-
-.button-info {
-  background-color: var(--button-info-default);
-  color: var(--button-info-contrast);
-
-  &:hover:not(.disabled) {
-    background-color: var(--button-info-hover);
-  }
-
-  &:focus-visible {
-    outline-offset: 1px;
-    outline: 2px solid var(--button-info-focus);
-  }
-}
-
-.button-error {
-  background-color: var(--button-error-default);
-  color: var(--button-error-contrast);
-
-  &:hover:not(.disabled) {
-    background-color: var(--button-error-hover);
-  }
-
-  &:focus-visible {
-    outline-offset: 1px;
-    outline: 2px solid var(--button-error-focus);
-  }
-}
+.button-primary   { @include button-variant(primary); }
+.button-secondary { @include button-variant(secondary); }
+.button-success   { @include button-variant(success); }
+.button-warning   { @include button-variant(warning); }
+.button-info      { @include button-variant(info); }
+.button-error     { @include button-variant(error); }

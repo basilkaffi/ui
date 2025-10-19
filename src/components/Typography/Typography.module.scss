@@ -1,23 +1,7 @@
-.text-primary {
-  color: var(--text-primary);
-}
+$text-variants: primary, secondary, success, warning, info, error;
 
-.text-secondary {
-  color: var(--text-secondary);
-}
-
-.text-success {
-  color: var(--text-success);
-}
-
-.text-warning {
-  color: var(--text-warning);
-}
-
-.text-info {
-  color: var(--text-info);
-}
-
-.text-error {
-  color: var(--text-error);
+@each $variant in $text-variants {
+  .text-#{$variant} {
+    color: var(--text-#{$variant});
+  }
 }
