@@ -27,18 +27,18 @@ function InnerApp() {
         <Button color='error'>Error</Button>
         <Link href="#">link example</Link>
       </div>
-      <Heading variant='1'>Title Heading 1</Heading>
-      <Heading color='secondary' variant='1'>Title Heading 1</Heading>
-      <Heading variant='2'>Title Heading 2</Heading>
-      <Heading color='secondary' variant='2'>Title Heading 2</Heading>
-      <Heading variant='3'>Title Heading 3</Heading>
-      <Heading color='secondary' variant='3'>Title Heading 3</Heading>
-      <Heading variant='4'>Title Heading 4</Heading>
-      <Heading color='secondary' variant='4'>Title Heading 4</Heading>
-      <Heading variant='5'>Title Heading 5</Heading>
-      <Heading color='secondary' variant='5'>Title Heading 5</Heading>
-      <Heading variant='6'>Title Heading 6</Heading>
-      <Heading color='secondary' variant='6'>Title Heading 6</Heading>
+      <Heading variant='h1'>Title Heading 1</Heading>
+      <Heading color='secondary' variant='h1'>Title Heading 1</Heading>
+      <Heading variant='h2'>Title Heading 2</Heading>
+      <Heading color='secondary' variant='h2'>Title Heading 2</Heading>
+      <Heading variant='h3'>Title Heading 3</Heading>
+      <Heading color='secondary' variant='h3'>Title Heading 3</Heading>
+      <Heading variant='h4'>Title Heading 4</Heading>
+      <Heading color='secondary' variant='h4'>Title Heading 4</Heading>
+      <Heading variant='h5'>Title Heading 5</Heading>
+      <Heading color='secondary' variant='h5'>Title Heading 5</Heading>
+      <Heading variant='h6'>Title Heading 6</Heading>
+      <Heading color='secondary' variant='h6'>Title Heading 6</Heading>
       <Paragraph>
         This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
       </Paragraph>

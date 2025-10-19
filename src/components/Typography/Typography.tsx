@@ -4,7 +4,7 @@ import styles from './Typography.module.scss';
 
 type HeadingProps = ComponentProps<'h1'> & {
   color?: 'primary' | 'secondary';
-  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 type ParagraphProps = ComponentProps<'p'> & {
@@ -22,17 +22,17 @@ export function Heading(props: HeadingProps) {
     return `${styles.button} ${styles[variantClassName]} ${className ?? ''}`.trim();
   }
   switch(variant) {
-    case '2':
+    case 'h2':
       return <h2 className={headingClassName()} {...otherProps} />
-    case '3':
+    case 'h3':
       return <h3 className={headingClassName()} {...otherProps} />
-    case '4':
+    case 'h4':
       return <h4 className={headingClassName()} {...otherProps} />
-    case '5':
+    case 'h5':
       return <h5 className={headingClassName()} {...otherProps} />
-    case '6':
+    case 'h6':
       return <h6 className={headingClassName()} {...otherProps} />
-    case '1':
+    case 'h1':
     default:
       return <h1 className={headingClassName()} {...otherProps} />
   }
