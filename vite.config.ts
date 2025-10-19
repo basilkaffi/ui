@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import injectCssToBundle from 'vite-plugin-css-injected-by-js';
 
 // https://vite.dev/config/
 import { fileURLToPath } from 'node:url';
@@ -10,7 +11,7 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), injectCssToBundle()],
   test: {
     projects: [{
       extends: true,
