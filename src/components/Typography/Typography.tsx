@@ -3,25 +3,25 @@ import type { Variant } from '../../theme/types';
 import styles from './Typography.module.scss';
 
 type HeadingProps = ComponentProps<'h1'> & {
-  color?: 'primary' | 'secondary';
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  variant?: 'primary' | 'secondary';
+  type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 type ParagraphProps = ComponentProps<'p'> & {
-  color?: Variant;
+  variant?: Variant;
 }
 
 type SmallProps = ComponentProps<'small'> & {
-  color?: Variant;
+  variant?: Variant;
 }
 
 export function Heading(props: HeadingProps) {
-  const { color = 'primary', variant, className, ...otherProps } = props;
+  const { variant = 'primary', type, className, ...otherProps } = props;
   const headingClassName = () => {
-    const variantClassName = `text-${color}`;
+    const variantClassName = `text-${variant}`;
     return `${styles.button} ${styles[variantClassName]} ${className ?? ''}`.trim();
   }
-  switch(variant) {
+  switch(type) {
     case 'h2':
       return <h2 className={headingClassName()} {...otherProps} />
     case 'h3':
@@ -39,18 +39,18 @@ export function Heading(props: HeadingProps) {
 }
 
 export function Paragraph(props: ParagraphProps) {
-  const { color = 'primary', className, ...otherProps } = props;
+  const { variant = 'primary', className, ...otherProps } = props;
   const paragraphClassName = () => {
-    const variantClassName = `text-${color}`;
+    const variantClassName = `text-${variant}`;
     return `${styles.button} ${styles[variantClassName]} ${className ?? ''}`.trim();
   }
   return <p className={paragraphClassName()} {...otherProps} />
 }
 
 export function Small(props: SmallProps) {
-  const { color = 'primary', className, ...otherProps } = props;
+  const { variant = 'primary', className, ...otherProps } = props;
   const smallClassName = () => {
-    const variantClassName = `text-${color}`;
+    const variantClassName = `text-${variant}`;
     return `${styles.button} ${styles[variantClassName]} ${className ?? ''}`.trim();
   }
   return <small className={smallClassName()} {...otherProps} />

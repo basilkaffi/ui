@@ -19,42 +19,42 @@ function InnerApp() {
       <hr />
       <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
         <Switch />
-        <Button color='primary'>Primary</Button>
-        <Button color='secondary'>Secondary</Button>
-        <Button color='success'>Success</Button>
-        <Button color='warning'>Warning</Button>
-        <Button color='info'>Info</Button>
-        <Button color='error'>Error</Button>
+        <Button>Primary</Button>
+        <Button variant='secondary'>Secondary</Button>
+        <Button variant='success'>Success</Button>
+        <Button variant='warning'>Warning</Button>
+        <Button variant='info'>Info</Button>
+        <Button variant='error'>Error</Button>
         <Link href="#">link example</Link>
       </div>
-      <Heading variant='h1'>Title Heading 1</Heading>
-      <Heading color='secondary' variant='h1'>Title Heading 1</Heading>
-      <Heading variant='h2'>Title Heading 2</Heading>
-      <Heading color='secondary' variant='h2'>Title Heading 2</Heading>
-      <Heading variant='h3'>Title Heading 3</Heading>
-      <Heading color='secondary' variant='h3'>Title Heading 3</Heading>
-      <Heading variant='h4'>Title Heading 4</Heading>
-      <Heading color='secondary' variant='h4'>Title Heading 4</Heading>
-      <Heading variant='h5'>Title Heading 5</Heading>
-      <Heading color='secondary' variant='h5'>Title Heading 5</Heading>
-      <Heading variant='h6'>Title Heading 6</Heading>
-      <Heading color='secondary' variant='h6'>Title Heading 6</Heading>
+      <Heading>Title Heading 1</Heading>
+      <Heading variant='secondary'>Title Heading 1</Heading>
+      <Heading type='h2'>Title Heading 2</Heading>
+      <Heading variant='secondary' type='h2'>Title Heading 2</Heading>
+      <Heading type='h3'>Title Heading 3</Heading>
+      <Heading variant='secondary' type='h3'>Title Heading 3</Heading>
+      <Heading type='h4'>Title Heading 4</Heading>
+      <Heading variant='secondary' type='h4'>Title Heading 4</Heading>
+      <Heading type='h5'>Title Heading 5</Heading>
+      <Heading variant='secondary' type='h5'>Title Heading 5</Heading>
+      <Heading type='h6'>Title Heading 6</Heading>
+      <Heading variant='secondary' type='h6'>Title Heading 6</Heading>
       <Paragraph>
         This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
       </Paragraph>
-      <Paragraph color='secondary'>
+      <Paragraph variant='secondary'>
         This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
       </Paragraph>
-      <Paragraph color='success'>
+      <Paragraph variant='success'>
         This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
       </Paragraph>
-      <Paragraph color='warning'>
+      <Paragraph variant='warning'>
         This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
       </Paragraph>
-      <Paragraph color='info'>
+      <Paragraph variant='info'>
         This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
       </Paragraph>
-      <Paragraph color='error'>
+      <Paragraph variant='error'>
         This is a sample paragraph to demonstrate the current theme styling. Switch between light and dark themes using the toggle above.
       </Paragraph>
       <Small>

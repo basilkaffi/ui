@@ -24,7 +24,7 @@ const darkTheme: ThemeConfig = {
   button: {
     primary: {
       default: 'purple-60',
-      hover: 'purple-70',
+      hover: 'purple-50',
       focus: 'purple-40',
       contrast: 'purple-10',
     },
@@ -36,25 +36,25 @@ const darkTheme: ThemeConfig = {
     },
     success: {
       default: 'green-60',
-      hover: 'green-70',
+      hover: 'green-50',
       focus: 'green-40',
       contrast: 'green-10',
     },
     warning: {
       default: 'yellow-60',
-      hover: 'yellow-70',
+      hover: 'yellow-50',
       focus: 'yellow-40',
       contrast: 'yellow-10',
     },
     info: {
       default: 'cyan-60',
-      hover: 'cyan-70',
+      hover: 'cyan-50',
       focus: 'cyan-40',
       contrast: 'cyan-10',
     },
     error: {
       default: 'red-60',
-      hover: 'red-70',
+      hover: 'red-50',
       focus: 'red-40',
       contrast: 'red-10',
     },

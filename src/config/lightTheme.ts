@@ -31,7 +31,7 @@ const lightTheme: ThemeConfig = {
     secondary: {
       default: 'gray-20',
       hover: 'gray-30',
-      focus: 'gray-50',
+      focus: 'gray-40',
       contrast: 'gray-80',
     },
     success: {
