@@ -1,0 +1,16 @@
+@use '../src/styles/index.scss';
+
+body {
+  .sbdocs-wrapper {
+    background-color: inherit;
+  }
+  code {
+    font-family: var(--font-primary) !important;
+    line-height: 1 !important;
+    font-size: 0.833rem !important;
+    color: var(--gray-70) !important;
+    background-color: var(--gray-00) !important;
+    padding: 0.1rem 0.3rem !important;
+    border-radius: 0.15rem !important;
+  }
+}

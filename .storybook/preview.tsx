@@ -1,6 +1,9 @@
 import type { Preview } from '@storybook/react-vite';
-import { ThemeProvider } from '../src/theme/context';
+import { applyTokens } from '../src/theme/utils';
 import { darkTheme, lightTheme } from '../src/config';
+import './storybook.scss';
+
+applyTokens(lightTheme);
 
 const preview: Preview = {
   parameters: {
@@ -8,13 +11,11 @@ const preview: Preview = {
       test: 'todo'
     },
     backgrounds: { disable: true },
-    docs: {
-      canvas: {
-        withToolbar: false,
-      }
-    }
   },
-  tags: ['autodocs'],
+  beforeEach: (context) => {
+    const theme = context.globals.theme === 'dark' ? darkTheme : lightTheme;
+    applyTokens(theme);
+  },
   globalTypes: {
     theme: {
       name: "Theme",
@@ -30,16 +31,6 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [
-    (Story, context) => {
-      const theme = context.globals.theme === "dark" ? darkTheme : lightTheme;
-      return (
-        <ThemeProvider themeConfig={theme}>
-          <Story />
-        </ThemeProvider>
-      )
-    }
-  ],
 };
 
 export default preview;
