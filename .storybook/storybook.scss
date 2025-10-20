@@ -1,8 +1,14 @@
 @use '../src/styles/index.scss';
 
 body {
-  .sbdocs-wrapper {
+  .sbdocs-wrapper, .sbdocs-preview {
     background-color: inherit;
+  }
+  .docblock-code-toggle {
+    font-family: inherit;
+    background-color: var(--button-secondary-default);
+    color: var(--button-secondary-contrast);
+    border: none;
   }
   code {
     font-family: var(--font-primary) !important;
