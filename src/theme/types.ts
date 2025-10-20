@@ -17,7 +17,7 @@ type Color = `${string}-${Step}0`;
 type Value = Color | (string & {});
 type TokenL1 = (typeof tokenL1s)[number];
 type State = (typeof states)[number];
-export type Variant = 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error';
+export type Variant = 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'danger';
 
 type TokenL2Type = Partial<Record<Variant | 'source', TokenL3Type | Value>>;
 type TokenL3Type = Partial<Record<State | 'contrast', Value>>;

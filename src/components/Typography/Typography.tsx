@@ -7,7 +7,7 @@ type HeadingProps = ComponentProps<'h1'> & {
   type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-type ParagraphProps = ComponentProps<'p'> & {
+type TextProps = ComponentProps<'p'> & {
   variant?: Variant;
 }
 
@@ -15,11 +15,15 @@ type SmallProps = ComponentProps<'small'> & {
   variant?: Variant;
 }
 
+type SpanProps = ComponentProps<'span'> & {
+  variant?: Variant;
+}
+
 export function Heading(props: HeadingProps) {
   const { variant = 'primary', type, className, ...otherProps } = props;
   const headingClassName = () => {
     const variantClassName = `text-${variant}`;
-    return `${styles.button} ${styles[variantClassName]} ${className ?? ''}`.trim();
+    return `${styles[variantClassName]} ${className ?? ''}`.trim();
   }
   switch(type) {
     case 'h2':
@@ -38,24 +42,41 @@ export function Heading(props: HeadingProps) {
   }
 }
 
-export function Paragraph(props: ParagraphProps) {
+export function Text(props: TextProps) {
   const { variant = 'primary', className, ...otherProps } = props;
-  const paragraphClassName = () => {
+  const TextClassName = () => {
     const variantClassName = `text-${variant}`;
-    return `${styles.button} ${styles[variantClassName]} ${className ?? ''}`.trim();
+    return `${styles[variantClassName]} ${className ?? ''}`.trim();
   }
-  return <p className={paragraphClassName()} {...otherProps} />
+  return <p className={TextClassName()} {...otherProps} />
 }
 
 export function Small(props: SmallProps) {
   const { variant = 'primary', className, ...otherProps } = props;
   const smallClassName = () => {
     const variantClassName = `text-${variant}`;
-    return `${styles.button} ${styles[variantClassName]} ${className ?? ''}`.trim();
+    return `${styles[variantClassName]} ${className ?? ''}`.trim();
   }
   return <small className={smallClassName()} {...otherProps} />
 }
 
+export function Span(props: SpanProps) {
+  const { variant = 'primary', className, ...otherProps } = props;
+  const spanClassName = () => {
+    const variantClassName = `text-${variant}`;
+    return `${styles[variantClassName]} ${className ?? ''}`.trim();
+  }
+  return <span className={spanClassName()} {...otherProps} />
+}
+
 export function Link(props: ComponentProps<'a'>) {
   return <a {...props} />
+}
+
+export function Code(props: ComponentProps<'code'>) {
+  return <code {...props} />
+}
+
+export function Label(props: ComponentProps<'label'>) {
+  return <label {...props} />
 }

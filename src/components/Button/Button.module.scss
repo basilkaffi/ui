@@ -36,4 +36,4 @@
 .button-success   { @include button-variant(success); }
 .button-warning   { @include button-variant(warning); }
 .button-info      { @include button-variant(info); }
-.button-error     { @include button-variant(error); }
+.button-danger     { @include button-variant(danger); }

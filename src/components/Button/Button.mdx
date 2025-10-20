@@ -1,0 +1,44 @@
+import { Meta, Unstyled, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import Button from './Button';
+import * as ButtonStory from './Button.stories';
+
+<Meta title="Components/Button" of={ButtonStory} />
+
+
+<Unstyled>
+#  Button
+#### Overview
+Button components extend the native HTML button element with additional property called `variant` to define its visual style.
+<Canvas />
+
+#### Component Variants
+<div style={{ display: 'flex', gap: 12 }}>
+  <Button variant="primary">Primary Button</Button>
+  <Button variant="secondary">Secondary Button</Button>
+  <Button variant="success">Success Button</Button>
+  <Button variant="danger">Danger Button</Button>
+  <Button variant="warning">Warning Button</Button>
+  <Button variant="info">Info Button</Button>
+</div>
+
+#### Property
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>variant</td>
+      <td>`primary` | `secondary` | `success` | `danger` | `warning` | `info`</td>
+      <td>Defines the visual style of the button.</td>
+      <td>`primary`</td>
+    </tr>
+  </tbody>
+</table>
+</Unstyled>

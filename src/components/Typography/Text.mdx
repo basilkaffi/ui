@@ -1,0 +1,25 @@
+import { Meta, Unstyled, Canvas } from "@storybook/addon-docs/blocks";
+import { Text } from './Typography';
+import * as TextStory from './Text.stories';
+
+<Meta of={TextStory} />
+
+<div style={{ display: 'none' }}>
+  <Canvas />
+</div>
+
+<Unstyled>
+# Text
+##### Primary Variant
+<Text>This is an example of a text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+##### Secondary Variant
+<Text variant="secondary">This is an example of a text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+##### Success Variant
+<Text variant="success">This is an example of a text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+##### Warning Variant
+<Text variant="warning">This is an example of a text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+##### Info Variant
+<Text variant="info">This is an example of a text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+##### Danger Variant
+<Text variant="danger">This is an example of a text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+</Unstyled>

@@ -1,0 +1,35 @@
+import { Meta, Unstyled, Canvas } from "@storybook/addon-docs/blocks";
+import { Heading } from './Typography';
+import * as HeadingStory from './Heading.stories';
+
+<Meta of={HeadingStory} />
+
+<div style={{ display: 'none' }}>
+  <Canvas />
+</div>
+
+<Unstyled>
+# Heading
+<div style={{ display: 'flex' }}>
+  <div style={{ flex: 1, padding: '1rem' }}>
+    <Heading type="h2">Primary Variant</Heading>
+    <hr/>
+    <Heading>Heading 1</Heading>
+    <Heading type="h2">Heading 2</Heading>
+    <Heading type="h3">Heading 3</Heading>
+    <Heading type="h4">Heading 4</Heading>
+    <Heading type="h5">Heading 5</Heading>
+    <Heading type="h6">Heading 6</Heading>
+  </div>
+  <div style={{ flex: 1, padding: '1rem' }}>
+    <Heading type="h2" variant="secondary">Secondary Variant</Heading>
+    <hr/>
+    <Heading variant="secondary">Heading 1</Heading>
+    <Heading type="h2" variant="secondary">Heading 2</Heading>
+    <Heading type="h3" variant="secondary">Heading 3</Heading>
+    <Heading type="h4" variant="secondary">Heading 4</Heading>
+    <Heading type="h5" variant="secondary">Heading 5</Heading>
+    <Heading type="h6" variant="secondary">Heading 6</Heading>
+  </div>
+</div>
+</Unstyled>

@@ -19,7 +19,7 @@ const darkTheme: ThemeConfig = {
     success: 'green-50',
     warning: 'yellow-40',
     info: 'cyan-30',
-    error: 'red-50',
+    danger: 'red-50',
   },
   button: {
     primary: {
@@ -52,7 +52,7 @@ const darkTheme: ThemeConfig = {
       focus: 'cyan-40',
       contrast: 'cyan-10',
     },
-    error: {
+    danger: {
       default: 'red-60',
       hover: 'red-50',
       focus: 'red-40',

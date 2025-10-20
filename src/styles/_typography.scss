@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.022em;
 }
 
-p, small, a, small {
+p, small, a, small, code, span, label {
   font-family: var(--font-primary);
   line-height: 1;
 }
@@ -45,10 +45,21 @@ h6 {
   font-size: 1.2rem;
 }
 
-p, a {
+p, a, span, label {
   font-size: 1rem;
 }
 
-small {
+small, code {
   font-size: 0.833rem;
+}
+
+code {
+  color: var(--gray-70);
+  background-color: var(--gray-00);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.15rem;
+}
+
+label {
+  font-weight: 500;
 }
