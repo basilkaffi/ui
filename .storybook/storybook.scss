@@ -4,6 +4,9 @@ body {
   .sbdocs-wrapper, .sbdocs-preview {
     background-color: inherit;
   }
+  .sbdocs-wrapper {
+    padding: 2rem 20px;
+  }
   .docblock-code-toggle {
     font-family: inherit;
     background-color: var(--button-secondary-default);
