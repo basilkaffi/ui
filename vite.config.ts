@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import dts from 'vite-plugin-dts';
 import injectCssToBundle from 'vite-plugin-css-injected-by-js';
 
 // https://vite.dev/config/
@@ -11,7 +12,28 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(), injectCssToBundle()],
+  plugins: [react(), injectCssToBundle(), dts({
+    exclude: ['src/**/*.stories.ts', 'src/**/*.stories.tsx'],
+    tsconfigPath: './tsconfig.app.json',
+  })],
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, "src/index.tsx"),
+      name: '@bka07/ui',
+      formats: ['es', 'umd'],
+      fileName: (format) => `bka07-ui.${format}.js`,
+    },
+    rollupOptions: {
+      // externalize peer deps like react
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
+    },
+  },
   test: {
     projects: [{
       extends: true,

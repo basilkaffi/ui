@@ -1,7 +1,7 @@
 import { useEffect, useContext, createContext } from 'react';
 import type { ThemeConfig } from './types';
 import { applyTokens } from './utils';
-import { darkTheme } from '../config';
+import { darkTheme } from '../configs';
 import '../styles/index.scss';
 
 type ThemeContextType = {
