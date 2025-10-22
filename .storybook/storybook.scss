@@ -13,15 +13,6 @@ body {
     color: var(--button-secondary-contrast);
     border: none;
   }
-  code {
-    font-family: var(--font-primary) !important;
-    line-height: 1 !important;
-    font-size: 0.833rem !important;
-    color: var(--gray-70) !important;
-    background-color: var(--gray-00) !important;
-    padding: 0.1rem 0.3rem !important;
-    border-radius: 0.15rem !important;
-  }
   .docblock-argstable {
     & th {
       color: var(--text-primary) !important;
@@ -40,6 +31,9 @@ body {
       background-color: var(--button-secondary-default) !important;
       color: var(--button-secondary-contrast) !important;
       box-shadow: var(--button-secondary-contrast) 0px 0px 0px 1px inset !important;
+    }
+    & span {
+      font-size: 0.833rem !important;
     }
   }
 }
