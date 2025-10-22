@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
 import { applyTokens } from '../src/theme/utils';
-import { darkTheme, lightTheme } from '../src/config';
+import { darkTheme, lightTheme } from '../src/configs';
 import './storybook.scss';
 
 applyTokens(lightTheme);

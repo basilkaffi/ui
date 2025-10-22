@@ -22,4 +22,24 @@ body {
     padding: 0.1rem 0.3rem !important;
     border-radius: 0.15rem !important;
   }
+  .docblock-argstable {
+    & th {
+      color: var(--text-primary) !important;
+      & span {
+        font-family: var(--font-secondary) !important;
+      }
+    }
+    & td {
+      background-color: var(--button-secondary-default) !important;
+      color: var(--button-secondary-contrast) !important;
+      & span {
+        font-weight: 400;
+      }
+    }
+    & textarea, select {
+      background-color: var(--button-secondary-default) !important;
+      color: var(--button-secondary-contrast) !important;
+      box-shadow: var(--button-secondary-contrast) 0px 0px 0px 1px inset !important;
+    }
+  }
 }
