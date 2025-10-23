@@ -1,5 +1,5 @@
 {
-  "name": "@basilkaffi/ui",
+  "name": "@basilkaran/ui",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -7,8 +7,8 @@
   "version": "0.0.2",
   "type": "module",
   "author": "Basil Kaffi Ar Rahman",
-  "main": "dist/basilkaffi-ui.umd.js",
-  "module": "dist/basilkaffi-ui.es.js",
+  "main": "dist/basilkaran-ui.umd.js",
+  "module": "dist/basilkaran-ui.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -b && vite build",
