@@ -27,14 +27,22 @@ jobs:
           version: 10.x
           run_install: false
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Publish to npm
+      - name: Run Changesets
         id: changesets
         uses: changesets/action@v1
         with:
+          version: pnpm version
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Auto-merge Changesets PR
+        if: steps.changesets.outputs.hasChangesets == 'true'
+        run: |
+          gh pr merge --squash "$PR_NUMBER"
+          gh api --method POST /repos/$REPO/dispatches -f 'event_type=release'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ steps.changesets.outputs.pullRequestNumber }}
