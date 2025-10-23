@@ -37,11 +37,10 @@ jobs:
 
       - name: Run Changesets
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@v1.5.3
         with:
           publish: pnpm release
-          commit: "ci: Version Packages"
-          title: "ci: Version Packages"
+          commit: "Publish version"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
