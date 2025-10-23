@@ -1,0 +1,32 @@
+import { Meta, Unstyled, Canvas } from "@storybook/addon-docs/blocks";
+import { Span } from './Typography';
+import * as SpanStory from './Span.stories';
+
+<Meta of={SpanStory} />
+
+<div style={{ display: 'none' }}>
+  <Canvas />
+</div>
+
+<Unstyled>
+# Span
+Inline text rendered with the `Span` component. Use variants to change color/intent.
+
+##### Primary Variant
+<Span>Inline span text</Span>
+
+##### Secondary Variant
+<Span variant="secondary">Inline span text</Span>
+
+##### Success Variant
+<Span variant="success">Inline span text</Span>
+
+##### Warning Variant
+<Span variant="warning">Inline span text</Span>
+
+##### Info Variant
+<Span variant="info">Inline span text</Span>
+
+##### Danger Variant
+<Span variant="danger">Inline span text</Span>
+</Unstyled>
