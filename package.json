@@ -1,6 +1,9 @@
 {
   "name": "@basilkaffi/ui",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.2",
   "type": "module",
   "author": "Basil Kaffi Ar Rahman",
