@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.7
+
+### Patch Changes
+
+- b9af737: update pipeline
+
 ## 0.0.6
 
 ### Patch Changes
