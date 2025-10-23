@@ -20,49 +20,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          registry-url: "https://registry.npmjs.org"
+          node-version: "22.x"
 
-      - name: Install pnpm
-        run: npm install -g pnpm@8
-
-      - name: Configure npm auth
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          if [ -z "${NODE_AUTH_TOKEN}" ]; then
-            echo "NPM_TOKEN is not set. Skipping publish.";
-            exit 0;
-          fi
-          npm config set //registry.npmjs.org/:_authToken "${NODE_AUTH_TOKEN}"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.x
+          run_install: false
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
-        run: pnpm build --if-present
-
-      - name: Check package.json private
-        id: check_private
-        run: |
-          if [ "$(cat package.json | jq -r '.private // false')" = "true" ]; then
-            echo "Package is private; skipping publish.";
-            echo "private=true" >> $GITHUB_OUTPUT;
-            exit 0;
-          fi
-          echo "private=false" >> $GITHUB_OUTPUT;
-
       - name: Publish to npm
-        if: steps.check_private.outputs.private == 'false'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          # prefer pnpm publish when available; fallback to npm
-          if command -v pnpm >/dev/null 2>&1; then
-            pnpm publish --access public --no-git-checks
-          else
-            npm publish --access public
-          fi
+          id: changesets
+          uses: changesets/action@v1
+          with:
+            publish: pnpm release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
