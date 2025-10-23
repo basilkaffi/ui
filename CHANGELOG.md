@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.2
+
+### Patch Changes
+
+- 688e116: disable private in package.json
+
 ## 0.1.1
 
 ### Patch Changes
