@@ -1,0 +1,26 @@
+import { Meta, Unstyled, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import Switch from './Switch';
+import * as SwitchStory from './Switch.stories';
+
+<Meta of={SwitchStory} />
+
+<Unstyled>
+# Switch
+Toggle switches for enabling/disabling a feature.
+<Canvas />
+
+### Component State
+##### Uncontrolled Component
+State managed internally by the component.
+<Switch defaultChecked={false} label="Enable feature" />
+
+##### Controlled Component
+State managed externally by the parent component by passing the `checked` prop.
+<Switch checked={true} label="On" />
+
+##### Disabled
+<Switch defaultChecked={false} disabled label="Disabled" />
+
+### Property
+<Controls />
+</Unstyled>
