@@ -23,9 +23,9 @@ const darkTheme: ThemeConfig = {
   },
   button: {
     primary: {
-      default: 'purple-60',
-      hover: 'purple-50',
-      focus: 'purple-40',
+      default: 'purple-70',
+      hover: 'purple-60',
+      focus: 'purple-50',
       contrast: 'purple-10',
     },
     secondary: {

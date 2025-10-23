@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import Button from './Button';
 
 const meta = {
@@ -6,6 +7,15 @@ const meta = {
   component: Button,
   parameters: {
     layout: 'centered',
+  },
+  argTypes: {
+    children: { control: 'text' },
+    variant: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'success', 'warning', 'info', 'danger'],
+    },
+    disabled: { control: 'boolean' },
+    onClick: { action: fn() },
   },
 } satisfies Meta<typeof Button>;
 
@@ -16,5 +26,6 @@ export const Playground: Story = {
   args: {
     children: 'Button',
     variant: 'primary',
+    disabled: false,
   },
 };
