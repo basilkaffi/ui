@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.8
+
+### Patch Changes
+
+- 42a7ec8: revert auto merge
+
 ## 0.0.7
 
 ### Patch Changes
