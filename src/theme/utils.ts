@@ -1,5 +1,6 @@
 import type { ThemeConfig } from './types';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function themeToCSSVars(theme: Record<string, any>, prefix = ''): string {
   let cssVars = '';
   const colorPattern = /^.+-(?:[0-9]|10)0$/;

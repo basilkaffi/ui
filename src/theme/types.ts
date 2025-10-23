@@ -1,4 +1,5 @@
-// Define design tokens
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 const tokenL1s = [
 	'background',
 	'surface',
@@ -23,3 +24,7 @@ type TokenL2Type = Partial<Record<Variant | 'source', TokenL3Type | Value>>;
 type TokenL3Type = Partial<Record<State | 'contrast', Value>>;
 
 export type ThemeConfig = Record<TokenL1, TokenL2Type | TokenL3Type | Value | string>;
+
+export type ThemeContextType = {
+	applyTheme: (customTheme: ThemeConfig) => void;
+};
