@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.6
+
+### Patch Changes
+
+- 76a6055: update changeset action
+
 ## 0.0.5
 
 ### Patch Changes
