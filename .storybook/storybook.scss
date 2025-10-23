@@ -36,4 +36,23 @@ body {
       font-size: 0.833rem !important;
     }
   }
+  #control-disabled {
+    background-color: var(--button-secondary-default) !important;
+    color: var(--button-secondary-contrast) !important;
+    box-shadow: var(--button-secondary-contrast) 0px 0px 0px 1px inset !important;
+    & ~ span {
+      color: var(--button-secondary-contrast);
+      position: relative;
+    }
+  }
+  #control-disabled:not(:checked) {
+    & ~ span:first-of-type {
+      background-color: var(--button-secondary-hover);
+    }
+  }
+  #control-disabled:checked {
+    & ~ span:last-of-type {
+      background-color: var(--button-secondary-hover);
+    }
+  }
 }
