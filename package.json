@@ -1,11 +1,11 @@
 {
-  "name": "@bka07/ui",
+  "name": "@basilkaffi/ui",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "author": "Basil Kaffi Ar Rahman",
-  "main": "dist/bka07-ui.umd.js",
-  "module": "dist/bka07-ui.es.js",
+  "main": "dist/basilkaffi-ui.umd.js",
+  "module": "dist/basilkaffi-ui.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -b && vite build",

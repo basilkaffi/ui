@@ -19,9 +19,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.tsx"),
-      name: '@bka07/ui',
+      name: '@basilkaffi/ui',
       formats: ['es', 'umd'],
-      fileName: (format) => `bka07-ui.${format}.js`,
+      fileName: (format) => `basilkaffi-ui.${format}.js`,
     },
     rollupOptions: {
       // externalize peer deps like react
