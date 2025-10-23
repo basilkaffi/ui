@@ -32,6 +32,9 @@ jobs:
           version: 10.x
           run_install: false
 
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Run Changesets
         id: changesets
         uses: changesets/action@v1
