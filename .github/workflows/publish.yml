@@ -8,8 +8,10 @@ on:
     types: [published]
 
 permissions:
-  contents: read
+  contents: write
   packages: write
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   publish:
