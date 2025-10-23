@@ -15,7 +15,6 @@
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "version": "pnpm changeset version && pnpm install --frozen-lockfile",
     "release": "pnpm build && pnpm changeset publish"
   },
   "peerDependencies": {
