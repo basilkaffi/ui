@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.3
+
+### Patch Changes
+
+- ac5d37a: publish package to public
+
 ## 0.0.2
 
 ### Patch Changes
