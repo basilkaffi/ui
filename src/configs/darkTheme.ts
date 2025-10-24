@@ -58,7 +58,17 @@ const darkTheme: ThemeConfig = {
       focus: 'rose-40',
       contrast: 'rose-10',
     },
-  }
+  },
+  switch: {
+    track: {
+      on: 'slate-70',
+      off: 'slate-50',
+    },
+    thumb: {
+      on: 'slate-90',
+      off: 'slate-70',
+    },
+  },
 };
 
 export default darkTheme;

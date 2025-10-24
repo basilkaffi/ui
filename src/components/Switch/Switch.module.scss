@@ -18,7 +18,7 @@
 .track {
 	width: 44px;
 	height: 24px;
-	background: var(--muted);
+	background: var(--switch-track-off);
 	border-radius: 999px;
 	position: relative;
 	transition: background 0.18s ease-in-out;
@@ -31,22 +31,22 @@
 	left: 2px;
 	width: 20px;
 	height: 20px;
-	background: var(--surface);
+	background: var(--switch-thumb-off);
 	border-radius: 50%;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 	transition: transform 0.18s ease-in-out;
 }
 
 .input:checked + .track {
-	background: var(--button-primary-default);
+	background: var(--switch-track-on);
 }
 .input:checked + .track .thumb {
 	transform: translateX(20px);
-	background: var(--background);
+	background: var(--switch-thumb-on);
 }
 
 .input:focus-visible + .track {
-	outline: 2px solid var(--button-primary-focus);
+	outline: 2px solid var(--switch-track-on);
 	outline-offset: 1px;
 }
 

@@ -58,7 +58,17 @@ const lightTheme: ThemeConfig = {
       focus: 'rose-50',
       contrast: 'rose-00',
     },
-  }
+  },
+  switch: {
+    track: {
+      on: 'purple-40',
+      off: 'purple-20',
+    },
+    thumb: {
+      on: 'slate-10',
+      off: 'purple-10',
+    },
+  },
 };
 
 export default lightTheme;
