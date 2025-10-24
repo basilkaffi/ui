@@ -1,9 +1,9 @@
 import type { ThemeConfig } from '../theme/types';
 
 const darkTheme: ThemeConfig = {
-  background: 'gray-90',
-  surface: 'gray-80',
-  muted: 'gray-40',
+  background: 'slate-90',
+  surface: 'slate-80',
+  muted: 'slate-40',
   font: {
     primary: '"Geist", sans-serif',
     secondary: '"Sora", sans-serif',
@@ -14,8 +14,8 @@ const darkTheme: ThemeConfig = {
     hover: 'purple-20',
   },
   text: {
-    primary: 'gray-10',
-    secondary: 'gray-40',
+    primary: 'slate-10',
+    secondary: 'slate-40',
     success: 'green-50',
     warning: 'yellow-40',
     info: 'cyan-30',
@@ -29,10 +29,10 @@ const darkTheme: ThemeConfig = {
       contrast: 'purple-10',
     },
     secondary: {
-      default: 'gray-80',
-      hover: 'gray-70',
-      focus: 'gray-60',
-      contrast: 'gray-20',
+      default: 'slate-80',
+      hover: 'slate-70',
+      focus: 'slate-60',
+      contrast: 'slate-20',
     },
     success: {
       default: 'green-60',

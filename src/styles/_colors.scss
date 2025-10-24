@@ -16,23 +16,30 @@ $steps: 10;
       $pct: $i * 10;
       $t: calc($pct / 100);
       $l: $l-start + ($l-end - $l-start) * $t;
-      $c: $c-min + ($c-max - $c-min) * $t;
+      
+      // Bell curve for chroma: peak at 50%
+      // Using a quadratic function: -(x-0.5)^2 + 1 scaled to chroma range
+      $bell: -4 * ($t - 0.5) * ($t - 0.5) + 1;  // -4(x-0.5)² + 1 gives 0→1→0
+      $c: $c-min + ($c-max - $c-min) * $bell;
+      
       $id: pad-step($pct);
       --#{$name}-#{$id}: oklch(#{$l}% #{$c} #{$h});
     }
   }
 }
 
-// Define core palettes
-@include generate-palette('gray', 250, 0.00, 0.02, 100, 12);
+@include generate-palette('slate', 255, 0.00, 0.03, 98, 15);
+@include generate-palette('gray', 0, 0.00, 0.02, 98, 15);
 @include generate-palette('red', 20, 0.02, 0.18, 98, 30);
 @include generate-palette('green', 140, 0.02, 0.16, 96, 22);
 @include generate-palette('yellow', 95, 0.01, 0.16, 98, 40);
 @include generate-palette('purple', 280, 0.01, 0.14, 96, 24);
-@include generate-palette('orange', 30, 0.01, 0.16, 98, 32);
-@include generate-palette('cyan', 190, 0.01, 0.16, 96, 18);
+@include generate-palette('orange', 35, 0.02, 0.14, 97, 40);
+@include generate-palette('cyan', 200, 0.02, 0.14, 96, 30);
+@include generate-palette('blue', 250, 0.02, 0.14, 96, 30);
+@include generate-palette('emerald', 160, 0.02, 0.12, 96, 25);
+@include generate-palette('rose', 10, 0.02, 0.15, 97, 35);
 
-// Single-shot tokens
 :root {
   --white-00: oklch(100% 0 0);
   --black-100: oklch(2% 0 0);
