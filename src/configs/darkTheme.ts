@@ -15,7 +15,7 @@ const darkTheme: ThemeConfig = {
   },
   text: {
     primary: 'slate-10',
-    secondary: 'slate-40',
+    secondary: 'gray-40',
     success: 'emerald-50',
     warning: 'orange-40',
     info: 'cyan-30',

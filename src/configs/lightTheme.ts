@@ -1,7 +1,7 @@
 import type { ThemeConfig } from '../theme/types';
 
 const lightTheme: ThemeConfig = {
-  background: 'slate-10',
+  background: 'slate-00',
   surface: 'purple-10',
   muted: 'purple-40',
   font: {
@@ -14,8 +14,8 @@ const lightTheme: ThemeConfig = {
     hover: 'purple-90',
   },
   text: {
-    primary: 'slate-80',
-    secondary: 'slate-50',
+    primary: 'gray-70',
+    secondary: 'gray-50',
     success: 'emerald-60',
     warning: 'orange-60',
     info: 'cyan-40',
@@ -61,12 +61,12 @@ const lightTheme: ThemeConfig = {
   },
   switch: {
     track: {
-      on: 'purple-40',
-      off: 'purple-20',
+      on: 'purple-30',
+      off: 'slate-20',
     },
     thumb: {
       on: 'slate-10',
-      off: 'purple-10',
+      off: 'slate-10',
     },
   },
 };
