@@ -29,10 +29,10 @@ const lightTheme: ThemeConfig = {
       contrast: 'purple-00',
     },
     secondary: {
-      default: 'slate-20',
-      hover: 'slate-30',
-      focus: 'slate-40',
-      contrast: 'slate-80',
+      default: 'slate-10',
+      hover: 'slate-20',
+      focus: 'slate-30',
+      contrast: 'slate-70',
     },
     success: {
       default: 'emerald-70',
@@ -62,11 +62,11 @@ const lightTheme: ThemeConfig = {
   switch: {
     track: {
       on: 'purple-30',
-      off: 'slate-20',
+      off: 'slate-10',
     },
     thumb: {
-      on: 'slate-10',
-      off: 'slate-10',
+      on: 'slate-00',
+      off: 'slate-00',
     },
   },
 };
