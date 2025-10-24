@@ -16,10 +16,10 @@ const darkTheme: ThemeConfig = {
   text: {
     primary: 'slate-10',
     secondary: 'slate-40',
-    success: 'green-50',
-    warning: 'yellow-40',
+    success: 'emerald-50',
+    warning: 'orange-40',
     info: 'cyan-30',
-    danger: 'red-50',
+    danger: 'rose-50',
   },
   button: {
     primary: {
@@ -35,16 +35,16 @@ const darkTheme: ThemeConfig = {
       contrast: 'slate-20',
     },
     success: {
-      default: 'green-60',
-      hover: 'green-50',
-      focus: 'green-40',
-      contrast: 'green-10',
+      default: 'emerald-60',
+      hover: 'emerald-50',
+      focus: 'emerald-40',
+      contrast: 'emerald-10',
     },
     warning: {
-      default: 'yellow-60',
-      hover: 'yellow-50',
-      focus: 'yellow-40',
-      contrast: 'yellow-10',
+      default: 'orange-60',
+      hover: 'orange-50',
+      focus: 'orange-40',
+      contrast: 'orange-10',
     },
     info: {
       default: 'cyan-60',
@@ -53,10 +53,10 @@ const darkTheme: ThemeConfig = {
       contrast: 'cyan-10',
     },
     danger: {
-      default: 'red-60',
-      hover: 'red-50',
-      focus: 'red-40',
-      contrast: 'red-10',
+      default: 'rose-60',
+      hover: 'rose-50',
+      focus: 'rose-40',
+      contrast: 'rose-10',
     },
   }
 };

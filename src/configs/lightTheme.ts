@@ -16,10 +16,10 @@ const lightTheme: ThemeConfig = {
   text: {
     primary: 'slate-80',
     secondary: 'slate-50',
-    success: 'green-60',
-    warning: 'yellow-60',
+    success: 'emerald-60',
+    warning: 'orange-60',
     info: 'cyan-40',
-    danger: 'red-70',
+    danger: 'rose-70',
   },
   button: {
     primary: {
@@ -35,16 +35,16 @@ const lightTheme: ThemeConfig = {
       contrast: 'slate-80',
     },
     success: {
-      default: 'green-70',
-      hover: 'green-80',
-      focus: 'green-50',
-      contrast: 'green-00',
+      default: 'emerald-70',
+      hover: 'emerald-80',
+      focus: 'emerald-50',
+      contrast: 'emerald-00',
     },
     warning: {
-      default: 'yellow-60',
-      hover: 'yellow-70',
-      focus: 'yellow-40',
-      contrast: 'yellow-00',
+      default: 'orange-60',
+      hover: 'orange-70',
+      focus: 'orange-40',
+      contrast: 'orange-00',
     },
     info: {
       default: 'cyan-40',
@@ -53,10 +53,10 @@ const lightTheme: ThemeConfig = {
       contrast: 'cyan-00',
     },
     danger: {
-      default: 'red-70',
-      hover: 'red-80',
-      focus: 'red-50',
-      contrast: 'red-00',
+      default: 'rose-70',
+      hover: 'rose-80',
+      focus: 'rose-50',
+      contrast: 'rose-00',
     },
   }
 };
