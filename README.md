@@ -28,6 +28,30 @@ function App() {
 }
 ```
 
+### Switching Themes
+
+You can switch themes dynamically using the `useTheme` hook which provides the `applyTheme` function:
+
+```tsx
+import { useTheme, darkTheme, lightTheme, Switch } from "@basilkaran/ui";
+
+function ThemeSwitcher() {
+  const { applyTheme } = useTheme();
+
+  const toggleTheme = (isDark: boolean) => {
+    applyTheme(isDark ? darkTheme : lightTheme);
+  };
+
+  return (
+    <Switch
+      onChange={(checked) => toggleTheme(checked)}
+      defaultChecked={true}
+      label="Dark Mode"
+    />
+  );
+}
+```
+
 ### Theme Configuration
 
 This library includes two built-in themes — `darkTheme` and `lightTheme`. However, you can easily create your own theme by following the ThemeConfig type structure.  
@@ -51,9 +75,9 @@ type ThemeConfig = {
 
   // Font configuration
   font: {
-    primary: string;
-    secondary: string;
-    source: string;
+    primary: string; // e.g., "Geist", sans-serif
+    secondary: string; // e.g., "Sora", sans-serif
+    source: string; // e.g., https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Sora:wght@100..800&display=swap
   };
 
   // Link styling
@@ -94,16 +118,6 @@ type ThemeConfig = {
     };
   };
 };
-
-const customTheme: ThemeConfig = {...}
-
-function App() {
-  return (
-    <ThemeProvider themeConfig={customTheme}>
-      <YourApp />
-    </ThemeProvider>
-  );
-}
 ```
 
 ### Color Palette

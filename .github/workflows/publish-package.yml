@@ -47,7 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Auto-merge Changesets PR (Publish to NPM)
+      - name: Auto-merge Changesets PR
         if: steps.changesets.outputs.hasChangesets == 'true'
         run: |
           gh pr merge --squash "$PR_NUMBER"
