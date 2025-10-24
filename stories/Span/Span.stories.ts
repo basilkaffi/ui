@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Text } from './Typography';
+import { Span } from '../../src';
 
 const meta = {
-  title: 'Typography/Text',
-  component: Text,
+  title: 'Typography/Span',
+  component: Span,
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof Text>;
+} satisfies Meta<typeof Span>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   args: {
-    children: 'This is a sample text paragraph.',
+    children: 'Inline span text',
     variant: 'primary',
   },
 };

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Small } from './Typography';
+import { Small } from '../../src';
 
 const meta = {
   title: 'Typography/Small',

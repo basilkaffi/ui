@@ -1,21 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Heading } from './Typography';
+import { Text } from '../../src';
 
 const meta = {
-  title: 'Typography/Heading',
-  component: Heading,
+  title: 'Typography/Text',
+  component: Text,
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof Heading>;
+} satisfies Meta<typeof Text>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   args: {
-    children: 'Heading Text',
+    children: 'This is a sample text paragraph.',
     variant: 'primary',
-    type: 'h1',
   },
 };

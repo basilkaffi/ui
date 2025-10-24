@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Label } from './Typography';
+import { Label } from '../../src';
 
 const meta = {
   title: 'Typography/Label',
