@@ -1,5 +1,13 @@
 # @basilkaffi/ui
 
+## 0.0.10
+
+### Patch Changes
+
+- c5007dc: set switch color in theme config
+  update color variants
+  change button color
+
 ## 0.0.9
 
 ### Patch Changes
