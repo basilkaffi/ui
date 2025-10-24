@@ -1,91 +1,136 @@
-# React + TypeScript + Vite
+# @basilkaran/ui
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React UI component library with built-in dark and light themes, powered by OKLCH color space for more vibrant and perceptually uniform colors.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install @basilkaran/ui
+# or
+yarn add @basilkaran/ui
+# or
+pnpm add @basilkaran/ui
 ```
 
-## Publishing
+## Quick Start
 
-This repository includes a GitHub Actions workflow at `.github/workflows/publish.yml` that publishes the package to the npm registry.
+Wrap your application with the ThemeProvider:
 
-- Triggers:
+```tsx
+import { ThemeProvider } from "@basilkaran/ui";
 
-  - push to the `main` branch
-  - when a GitHub Release is published
-
-- Requirements:
-
-  - Add an `NPM_TOKEN` secret to the repository (Settings → Secrets → Actions). The token should be a personal access token or an npm automation token with publish permissions.
-  - Ensure `package.json` does not have `private: true` (the workflow will skip publishing for private packages).
-
-- Notes:
-  - The workflow uses `pnpm` to install and publish when available. It runs `pnpm build --if-present` before attempting publish.
-  - If `NPM_TOKEN` is not set the workflow exits without publishing.
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+function App() {
+  return (
+    <ThemeProvider>
+      <YourApp />
+    </ThemeProvider>
+  );
+}
 ```
+
+### Theme Configuration
+
+This library includes two built-in themes — `darkTheme` and `lightTheme`. However, you can easily create your own theme by following the ThemeConfig type structure.  
+The ThemeConfig type defines all the customizable options available for your theme:
+
+```typescript
+type ColorToken = `${string}-${number}`; // e.g., 'purple-70', 'slate-10'
+
+type ButtonConfig = {
+  default: ColorToken;
+  hover: ColorToken;
+  focus: ColorToken;
+  contrast: ColorToken;
+};
+
+type ThemeConfig = {
+  // Base theme colors
+  background: ColorToken;
+  surface: ColorToken;
+  muted: ColorToken;
+
+  // Font configuration
+  font: {
+    primary: string;
+    secondary: string;
+    source: string;
+  };
+
+  // Link styling
+  link: {
+    default: ColorToken;
+    hover: ColorToken;
+  };
+
+  // Text colors for different states
+  text: {
+    primary: ColorToken;
+    secondary: ColorToken;
+    success: ColorToken;
+    warning: ColorToken;
+    info: ColorToken;
+    danger: ColorToken;
+  };
+
+  // Button variants configuration
+  button: {
+    primary: ButtonConfig;
+    secondary: ButtonConfig;
+    success: ButtonConfig;
+    warning: ButtonConfig;
+    info: ButtonConfig;
+    danger: ButtonConfig;
+  };
+
+  // Switch component styling
+  switch: {
+    track: {
+      on: ColorToken;
+      off: ColorToken;
+    };
+    thumb: {
+      on: ColorToken;
+      off: ColorToken;
+    };
+  };
+};
+
+const customTheme: ThemeConfig = {...}
+
+function App() {
+  return (
+    <ThemeProvider themeConfig={customTheme}>
+      <YourApp />
+    </ThemeProvider>
+  );
+}
+```
+
+### Color Palette
+
+The library includes a sophisticated color system using OKLCH color space, providing better perceptual uniformity and more vibrant colors. Available color scales:
+
+- `slate`: Neutral gray with a slight blue tint
+- `gray`: Pure neutral gray
+- `red`: Vibrant red
+- `green`: Natural green
+- `yellow`: Warm yellow
+- `purple`: Rich purple
+- `orange`: Warm orange
+- `cyan`: Cool cyan
+- `blue`: Deep blue
+- `emerald`: Soft emerald
+- `rose`: Warm rose
+
+Each color has 11 steps (00-90) for maximum flexibility:
+
+- `00`: Lightest variant (98% lightness)
+- `90`: Darkest variant (15-40% lightness depending on the color)
+
+Colors are implemented as CSS custom properties and can be accessed using the format: `var(--{color}-{step})`.
+
+Example: `var(--purple-70)`, `var(--slate-10)`, etc.
+
+## License
+
+MIT © [Basil Kaffi Ar Rahman](https://github.com/basilkaffi)
