@@ -62,7 +62,7 @@ function ThemeSwitcher() {
 
 ### Theme Configuration
 
-This library includes two built-in themes — `darkTheme` and `lightTheme`. However, you can easily create your own theme by following the ThemeConfig type structure.  
+This library includes two built-in themes — `darkTheme` and `lightTheme`. However, Theme can be easily customized by following the ThemeConfig type structure.  
 The ThemeConfig type defines all the customizable options available for your theme:
 
 ```typescript
@@ -144,7 +144,7 @@ function App() {
 
 ### Color Palette
 
-The library includes a color system using OKLCH color space, providing better perceptual uniformity and more vibrant colors. Available color scales:
+Available colors:
 
 - `slate`
 - `gray`
@@ -163,7 +163,3 @@ Each color has 11 steps (00-100) for maximum flexibility:
 Colors are implemented as CSS custom properties and can be accessed using the format: `var(--{color}-{step})`.
 
 Example: `var(--purple-70)`, `var(--slate-10)`, etc.
-
-## License
-
-MIT © [Basil Kaffi Ar Rahman](https://github.com/basilkaffi)
