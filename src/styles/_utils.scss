@@ -1,0 +1,9 @@
+@function calc-radius($radius, $gap: 0, $direction: 'out') {
+  @if $direction == 'out' {
+    @return calc(#{$radius} + #{$gap});
+  } @else if $direction == 'in' {
+    @return calc(#{$radius} - #{$gap});
+  } @else {
+    @error "Invalid direction '#{$direction}'. Use 'out' or 'in'.";
+  }
+}

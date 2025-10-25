@@ -4,6 +4,7 @@ const lightTheme: ThemeConfig = {
   background: 'slate-00',
   surface: 'purple-10',
   muted: 'purple-40',
+  border: 'slate-30',
   font: {
     primary: '"Geist", sans-serif',
     secondary: '"Sora", sans-serif',

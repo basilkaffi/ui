@@ -1,5 +1,5 @@
-@use './_colors';
-@use './_typography';
+@use './colors';
+@use './typography';
 
 body {
   background: var(--background);

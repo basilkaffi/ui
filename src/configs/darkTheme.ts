@@ -4,6 +4,7 @@ const darkTheme: ThemeConfig = {
   background: 'slate-90',
   surface: 'slate-80',
   muted: 'slate-40',
+  border: 'slate-70',
   font: {
     primary: '"Geist", sans-serif',
     secondary: '"Sora", sans-serif',

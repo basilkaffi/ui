@@ -1,4 +1,4 @@
-# BASIL-UI
+# Basil-UI
 
 Simple UI library with build-in theme provider.
 
@@ -12,9 +12,13 @@ Play around with the components in the [documentation](https://basilkaffi.github
 npm install @basilkaran/ui
 ```
 
+or
+
 ```bash
 yarn add @basilkaran/ui
 ```
+
+or
 
 ```bash
 pnpm add @basilkaran/ui
