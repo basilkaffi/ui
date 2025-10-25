@@ -1,18 +1,22 @@
-# @basilkaran/ui
+# BASIL-UI
 
-React UI component library with built-in dark and light themes, powered by OKLCH color space for more vibrant and perceptually uniform colors.
+Simple UI library with build-in theme provider.
 
 ## Documentation
 
-Check storybook documentation [here](https://basilkaffi.github.io/ui).
+Play around with the components in the [documentation](https://basilkaffi.github.io/ui).
 
 ## Installation
 
 ```bash
 npm install @basilkaran/ui
-# or
+```
+
+```bash
 yarn add @basilkaran/ui
-# or
+```
+
+```bash
 pnpm add @basilkaran/ui
 ```
 
@@ -34,7 +38,7 @@ function App() {
 
 ### Switching Themes
 
-You can switch themes dynamically using the `useTheme` hook which provides the `applyTheme` function:
+Switch themes dynamically using the `useTheme` hook which provides the `applyTheme` function:
 
 ```tsx
 import { useTheme, darkTheme, lightTheme, Switch } from "@basilkaran/ui";
@@ -124,26 +128,37 @@ type ThemeConfig = {
 };
 ```
 
+```tsx
+import { ThemeProvider } from "@basilkaran/ui";
+
+const customTheme: ThemeConfig = { ... }
+
+function App() {
+  return (
+    <ThemeProvider themeConfig={customTheme}>
+      <YourApp />
+    </ThemeProvider>
+  );
+}
+```
+
 ### Color Palette
 
-The library includes a sophisticated color system using OKLCH color space, providing better perceptual uniformity and more vibrant colors. Available color scales:
+The library includes a color system using OKLCH color space, providing better perceptual uniformity and more vibrant colors. Available color scales:
 
-- `slate`: Neutral gray with a slight blue tint
-- `gray`: Pure neutral gray
-- `red`: Vibrant red
-- `green`: Natural green
-- `yellow`: Warm yellow
-- `purple`: Rich purple
-- `orange`: Warm orange
-- `cyan`: Cool cyan
-- `blue`: Deep blue
-- `emerald`: Soft emerald
-- `rose`: Warm rose
+- `slate`
+- `gray`
+- `emerald`
+- `green`
+- `rose`
+- `red`
+- `orange`
+- `yellow`
+- `purple`
+- `blue`
+- `sky`
 
-Each color has 11 steps (00-90) for maximum flexibility:
-
-- `00`: Lightest variant (98% lightness)
-- `90`: Darkest variant (15-40% lightness depending on the color)
+Each color has 11 steps (00-100) for maximum flexibility:
 
 Colors are implemented as CSS custom properties and can be accessed using the format: `var(--{color}-{step})`.
 

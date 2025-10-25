@@ -18,7 +18,7 @@ const lightTheme: ThemeConfig = {
     secondary: 'gray-50',
     success: 'emerald-60',
     warning: 'orange-60',
-    info: 'cyan-40',
+    info: 'sky-40',
     danger: 'rose-70',
   },
   button: {
@@ -47,10 +47,10 @@ const lightTheme: ThemeConfig = {
       contrast: 'orange-00',
     },
     info: {
-      default: 'cyan-40',
-      hover: 'cyan-50',
-      focus: 'cyan-20',
-      contrast: 'cyan-00',
+      default: 'sky-40',
+      hover: 'sky-50',
+      focus: 'sky-20',
+      contrast: 'sky-00',
     },
     danger: {
       default: 'rose-70',

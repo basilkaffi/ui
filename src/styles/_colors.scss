@@ -35,7 +35,7 @@ $steps: 10;
 @include generate-palette('yellow', 95, 0.01, 0.16, 98, 40);
 @include generate-palette('purple', 280, 0.01, 0.14, 96, 24);
 @include generate-palette('orange', 35, 0.02, 0.14, 97, 40);
-@include generate-palette('cyan', 200, 0.02, 0.14, 96, 30);
+@include generate-palette('sky', 200, 0.02, 0.14, 96, 30);
 @include generate-palette('blue', 250, 0.02, 0.14, 96, 30);
 @include generate-palette('emerald', 160, 0.02, 0.12, 96, 25);
 @include generate-palette('rose', 10, 0.02, 0.15, 97, 35);

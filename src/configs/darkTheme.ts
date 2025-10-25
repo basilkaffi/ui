@@ -18,7 +18,7 @@ const darkTheme: ThemeConfig = {
     secondary: 'gray-40',
     success: 'emerald-50',
     warning: 'orange-40',
-    info: 'cyan-30',
+    info: 'sky-30',
     danger: 'rose-50',
   },
   button: {
@@ -47,10 +47,10 @@ const darkTheme: ThemeConfig = {
       contrast: 'orange-10',
     },
     info: {
-      default: 'cyan-60',
-      hover: 'cyan-50',
-      focus: 'cyan-40',
-      contrast: 'cyan-10',
+      default: 'sky-60',
+      hover: 'sky-50',
+      focus: 'sky-40',
+      contrast: 'sky-10',
     },
     danger: {
       default: 'rose-60',
