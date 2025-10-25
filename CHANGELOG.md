@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.13
+
+### Patch Changes
+
+- 909eb14: add color pallete in storybook, update theme config type, update theme config color, update color gradient
+
 ## 0.0.12
 
 ### Patch Changes
