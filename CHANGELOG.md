@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.14
+
+### Patch Changes
+
+- 7ca5e52: re-add variant type
+
 ## 0.0.13
 
 ### Patch Changes
