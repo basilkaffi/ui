@@ -60,6 +60,8 @@ export type ThemeConfig = {
   switch: SwitchElement;
 };
 
+export type Variant = 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'danger';
+
 export type ThemeContextType = {
 	applyTheme: (customTheme: ThemeConfig) => void;
 };
