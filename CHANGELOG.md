@@ -1,5 +1,11 @@
 # @basilkaffi/ui
 
+## 0.0.12
+
+### Patch Changes
+
+- 75b5a76: Update readme
+
 ## 0.0.11
 
 ### Patch Changes
