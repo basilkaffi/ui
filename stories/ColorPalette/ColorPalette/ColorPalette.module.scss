@@ -1,0 +1,32 @@
+@use '../../../src/styles/colors';
+
+.colorBox {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  .colorInfo {
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: var(--white-00);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &:hover .colorInfo {
+    opacity: 1;
+  }
+}
+
+// Generate color classes for each palette and step
+@each $name in ("slate", "gray", "zinc", "neutral", "stone", "red", "orange", "amber", "yellow", "lime", "green", "emerald", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "fuchsia", "pink", "rose") {
+  @for $i from 0 through 10 {
+    $step: if($i == 0, "00", "#{$i}0");
+    .#{$name}-#{$step} {
+      background-color: var(--#{$name}-#{$step});
+    }
+  }
+}

@@ -1,5 +1,6 @@
 type Step = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10';
-type Color = `${string}-${Step}0`;
+type Color = 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose' | 'white' | 'black';
+type ColorToken = `${Color}-${Step}0`;
 
 type Font = {
 	primary: string;
@@ -8,24 +9,24 @@ type Font = {
 };
 
 type LinkColors = {
-	default: Color;
-	hover: Color;
+	default: ColorToken;
+	hover: ColorToken;
 }
 
 type TextVariant = {
-	primary: Color;
-	secondary: Color;
-	success: Color;
-	warning: Color;
-	info: Color;
-	danger: Color;
+	primary: ColorToken;
+	secondary: ColorToken;
+	success: ColorToken;
+	warning: ColorToken;
+	info: ColorToken;
+	danger: ColorToken;
 }
 
 type ButtonState = {
-	default: Color;
-	hover: Color;
-	focus: Color;
-	contrast: Color;
+	default: ColorToken;
+	hover: ColorToken;
+	focus: ColorToken;
+	contrast: ColorToken;
 }
 
 type ButtonVariants = {
@@ -37,21 +38,21 @@ type ButtonVariants = {
 	danger: ButtonState;
 }
 
-type SwitchColors = {
-	on: Color;
-	off: Color;
+type SwitchColorTokens = {
+	on: ColorToken;
+	off: ColorToken;
 }
 
 type SwitchElement = {
-	track: SwitchColors;
-	thumb: SwitchColors;
+	track: SwitchColorTokens;
+	thumb: SwitchColorTokens;
 }
 
 export type ThemeConfig = {
-  background: Color;
-  surface: Color;
-  muted: Color;
-  border: Color;
+  background: ColorToken;
+  surface: ColorToken;
+  muted: ColorToken;
+  border: ColorToken;
   font: Font;
   link: LinkColors;
   text: TextVariant;

@@ -2,8 +2,8 @@ import type { ThemeConfig } from '../theme/types';
 
 const lightTheme: ThemeConfig = {
   background: 'slate-00',
-  surface: 'purple-10',
-  muted: 'purple-40',
+  surface: 'slate-10',
+  muted: 'slate-30',
   border: 'slate-30',
   font: {
     primary: '"Geist", sans-serif',
@@ -15,12 +15,12 @@ const lightTheme: ThemeConfig = {
     hover: 'purple-90',
   },
   text: {
-    primary: 'gray-70',
-    secondary: 'gray-50',
-    success: 'emerald-60',
+    primary: 'slate-70',
+    secondary: 'slate-50',
+    success: 'emerald-80',
     warning: 'orange-60',
     info: 'sky-40',
-    danger: 'rose-70',
+    danger: 'red-70',
   },
   button: {
     primary: {
@@ -42,15 +42,15 @@ const lightTheme: ThemeConfig = {
       contrast: 'emerald-00',
     },
     warning: {
-      default: 'orange-60',
-      hover: 'orange-70',
-      focus: 'orange-40',
-      contrast: 'orange-00',
+      default: 'orange-70',
+      hover: 'orange-80',
+      focus: 'orange-50',
+      contrast: 'white-00',
     },
     info: {
-      default: 'sky-40',
-      hover: 'sky-50',
-      focus: 'sky-20',
+      default: 'sky-70',
+      hover: 'sky-80',
+      focus: 'sky-50',
       contrast: 'sky-00',
     },
     danger: {

@@ -152,15 +152,26 @@ Available colors:
 
 - `slate`
 - `gray`
-- `emerald`
-- `green`
-- `rose`
+- `zinc`
+- `neutral`
+- `stone`
 - `red`
 - `orange`
+- `amber`
 - `yellow`
-- `purple`
-- `blue`
+- `lime`
+- `green`
+- `emerald`
+- `teal`
+- `cyan`
 - `sky`
+- `blue`
+- `indigo`
+- `violet`
+- `purple`
+- `fuchsia`
+- `pink`
+- `rose`
 
 Each color has 11 steps (00-100) for maximum flexibility:
 

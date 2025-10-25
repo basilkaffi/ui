@@ -1,6 +1,5 @@
 // Generated OKLCH color scales for the project.
 // Uses SCSS to emit CSS custom properties like --gray-00 ... --gray-100
-
 $steps: 10;
 
 // Helper to format numbers with leading zero for 0 (00) and two-digit steps
@@ -10,35 +9,54 @@ $steps: 10;
 }
 
 // Build a generic palette generator.
-@mixin generate-palette($name, $h, $c-min, $c-max, $l-start, $l-end){
+@mixin generate-palette($name, $h, $c-min, $c-max, $l-start, $l-end) {
   :root {
     @for $i from 0 through $steps {
       $pct: $i * 10;
       $t: calc($pct / 100);
       $l: $l-start + ($l-end - $l-start) * $t;
-      
-      // Bell curve for chroma: peak at 50%
-      // Using a quadratic function: -(x-0.5)^2 + 1 scaled to chroma range
-      $bell: -4 * ($t - 0.5) * ($t - 0.5) + 1;  // -4(x-0.5)² + 1 gives 0→1→0
-      $c: $c-min + ($c-max - $c-min) * $bell;
-      
+      $c: $c-min + ($c-max - $c-min) * calc($t / 0.7);
+      @if $t > 0.7 {
+        $c: $c-max - ($c-max - $c-min) * calc(($t - 0.7) / 0.3);
+      }
       $id: pad-step($pct);
       --#{$name}-#{$id}: oklch(#{$l}% #{$c} #{$h});
     }
   }
 }
 
+
+// Grays
 @include generate-palette('slate', 255, 0.00, 0.03, 98, 15);
 @include generate-palette('gray', 0, 0.00, 0.02, 98, 15);
+@include generate-palette('zinc', 240, 0.00, 0.02, 98, 15);
+@include generate-palette('neutral', 0, 0.00, 0.02, 98, 15);
+@include generate-palette('stone', 20, 0.00, 0.02, 98, 15);
+
+// Warm colors
 @include generate-palette('red', 20, 0.02, 0.18, 98, 30);
-@include generate-palette('green', 140, 0.02, 0.16, 96, 22);
-@include generate-palette('yellow', 95, 0.01, 0.16, 98, 40);
-@include generate-palette('purple', 280, 0.01, 0.14, 96, 24);
 @include generate-palette('orange', 35, 0.02, 0.14, 97, 40);
-@include generate-palette('sky', 200, 0.02, 0.14, 96, 30);
-@include generate-palette('blue', 250, 0.02, 0.14, 96, 30);
+@include generate-palette('amber', 75, 0.02, 0.15, 97, 40);
+@include generate-palette('yellow', 90, 0.01, 0.16, 98, 40);
+
+// Green spectrum
+@include generate-palette('lime', 100, 0.02, 0.15, 96, 25);
+@include generate-palette('green', 120, 0.02, 0.16, 96, 22);
 @include generate-palette('emerald', 160, 0.02, 0.12, 96, 25);
-@include generate-palette('rose', 10, 0.02, 0.15, 97, 35);
+@include generate-palette('teal', 180, 0.02, 0.13, 96, 25);
+
+// Blue spectrum
+@include generate-palette('cyan', 190, 0.02, 0.14, 96, 28);
+@include generate-palette('sky', 200, 0.02, 0.14, 96, 30);
+@include generate-palette('blue', 240, 0.02, 0.14, 96, 30);
+@include generate-palette('indigo', 265, 0.02, 0.14, 96, 28);
+
+// Purple and pink spectrum
+@include generate-palette('violet', 275, 0.01, 0.14, 96, 26);
+@include generate-palette('purple', 280, 0.01, 0.14, 96, 24);
+@include generate-palette('fuchsia', 315, 0.02, 0.15, 97, 32);
+@include generate-palette('pink', 350, 0.02, 0.15, 97, 35);
+@include generate-palette('rose', 0, 0.02, 0.15, 97, 35);
 
 :root {
   --white-00: oklch(100% 0 0);

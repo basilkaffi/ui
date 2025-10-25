@@ -1,0 +1,35 @@
+import { Meta, Unstyled, Canvas } from "@storybook/addon-docs/blocks";
+import * as ColorPaletteStory from './ColorPalette.stories';
+
+<Meta of={ColorPaletteStory} />
+<div style={{ display: 'none' }}>
+  <Canvas />
+</div>
+
+<Unstyled>
+# Color Palette
+
+This is a comprehensive display of all color palettes available in the design system. Each color has 11 steps from 00 to 100, representing different shades and tones.
+
+### Usage
+
+The color palette is implemented using CSS custom properties (variables) in the OKLCH color space, which provides better perceptual uniformity and a wider gamut than traditional color spaces.
+
+Each color variant can be accessed using the CSS variable format:
+```css
+var(--{color}-{step})
+```
+
+For example:
+- `var(--blue-50)` for the middle blue tone
+- `var(--red-00)` for the lightest red
+- `var(--green-100)` for the darkest green
+
+### Available Colors
+
+- Grays                   : slate, gray, zinc, neutral, stone
+- Warm Colors             : red, orange, amber, yellow
+- Green Spectrum          : lime, green, emerald, teal
+- Blue Spectrum           : cyan, sky, blue, indigo
+- Purple and Pink Spectrum: violet, purple, fuchsia, pink, rose
+</Unstyled>

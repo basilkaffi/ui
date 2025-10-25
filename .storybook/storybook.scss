@@ -9,9 +9,22 @@ body {
   }
   .docblock-code-toggle {
     font-family: inherit;
-    background-color: var(--button-secondary-default);
-    color: var(--button-secondary-contrast);
+    background-color: var(--surface);
+    color: var(--text-primary);
     border: none;
+  }
+  .docblock-source {
+    background-color: var(--surface);
+    color: var(--text-primary);
+    & .token {
+      color: var(--text-primary) !important;
+    }
+    & button {
+      font-family: inherit;
+      background-color: var(--muted);
+      color: var(--text-primary);
+      border: none;
+    }
   }
   .docblock-argstable {
     & th {
@@ -21,27 +34,27 @@ body {
       }
     }
     & td {
-      background-color: var(--button-secondary-default) !important;
-      color: var(--button-secondary-contrast) !important;
+      background-color: var(--surface) !important;
+      color: var(--text-primary) !important;
       & span {
         font-weight: 400;
       }
     }
     & textarea, select {
-      background-color: var(--button-secondary-default) !important;
-      color: var(--button-secondary-contrast) !important;
-      box-shadow: var(--button-secondary-contrast) 0px 0px 0px 1px inset !important;
+      background-color: var(--surface) !important;
+      color: var(--text-primary) !important;
+      box-shadow: var(--text-primary) 0px 0px 0px 1px inset !important;
     }
     & span {
       font-size: 0.833rem !important;
     }
   }
   input[role="switch"] {
-    background-color: var(--button-secondary-default) !important;
-    color: var(--button-secondary-contrast) !important;
-    box-shadow: var(--button-secondary-contrast) 0px 0px 0px 1px inset !important;
+    background-color: var(--surface) !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--text-primary) 0px 0px 0px 1px inset !important;
     & ~ span {
-      color: var(--button-secondary-contrast);
+      color: var(--text-primary);
       position: relative;
     }
   }
