@@ -1,6 +1,10 @@
 # @basilkaran/ui
 
-A modern React UI component library with built-in dark and light themes, powered by OKLCH color space for more vibrant and perceptually uniform colors.
+React UI component library with built-in dark and light themes, powered by OKLCH color space for more vibrant and perceptually uniform colors.
+
+## Documentation
+
+Check storybook documentation [here](https://basilkaffi.github.io/ui).
 
 ## Installation
 
